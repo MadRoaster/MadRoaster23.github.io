@@ -53,4 +53,27 @@ $( document ).ready(function() {
 		$("#Submit-Form-Button").delay(100).fadeIn();
 	});
 	
+	const generateRandomString = (length) => {
+		const characters =
+			'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+		const charactersLength = characters.length;
+		let result = '';
+
+		// Create an array of 32-bit unsigned integers
+		const randomValues = new Uint32Array(length);
+		
+		// Generate random values
+		window.crypto.getRandomValues(randomValues);
+		randomValues.forEach((value) => {
+			result += characters.charAt(value % charactersLength);
+		});
+		return result;
+	}
+	
+	$("#Unique-Identifier-Section").find('input').val(getCurrentUnixTimestamp() + generateRandomString(22));
+	
 });
+
+function getCurrentUnixTimestamp() {
+  return Math.floor(Date.now() / 1000);
+}
