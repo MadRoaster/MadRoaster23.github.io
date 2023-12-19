@@ -26,23 +26,43 @@ $( document ).ready(function() {
 		  $("#Amoy_Accordion").show();
 		  
 		  $('#RWS_Accordion').find('input[type=number]').val('');
-	  } else if ( $(this).val() == "RWS" ) {
+	  } 
+		// Modified by KL for 20231212 - Added Courtyard
+		else if ( $(this).val() == "RWS" || $(this).val() == "Courtyard" ) {
 		  $("#Amoy_Accordion").hide();
 		  $("#RWS_Accordion").show();
+			
+			// Modified by KL for 20231212 - show Toasted Cereal when non-RWS is selected
+			if ( $(this).val() == "RWS" ) {
+				var $ToastedCerealLabelVar = $('label:contains("Toasted Cereal")');
+				$ToastedCerealLabelVar.show();
+				var $ToastedCerealInputVar = $ToastedCerealLabelVar.nextAll("input:first");
+				$ToastedCerealInputVar.show();
+			} else {
+				var $ToastedCerealLabelVar = $('label:contains("Toasted Cereal")');
+				$ToastedCerealLabelVar.hide();
+				var $ToastedCerealInputVar = $ToastedCerealLabelVar.nextAll("input:first");
+				$ToastedCerealInputVar.hide();
+				$ToastedCerealInputVar.val('');
+			}
 		  
 		  $('#Amoy_Accordion').find('input[type=number]').val('');
 		  // $('#flush-collapseSixAmoy').collapse();
 	  }
 	});
 	
-	$( "#daily-small-orders-outlined" ).on( "click", function( event ) {
+	// Updated by KL on 20231212 - Changed from Small Orders to Start Order 
+	$( "#start-order-outlined" ).on( "click", function( event ) {
 		$("#Outlet-Section").delay(100).fadeIn();
 		$("#Whole-Form").delay(100).fadeIn();
+		// Updated by KL on 20231212 - Changed from Small Orders to Start Order 
+		$("#Big-Order-Section").delay(100).fadeIn();
 		$("#Others-Section").delay(100).fadeIn();
 		$("#Submit-Form-Button").delay(100).fadeIn();
 		
-		$("#Big-Order-Section").delay(100).fadeOut();
-		$("#Big-Order-Section").find('input[type=number]').val('');
+		// Updated by KL on 20231212 - Changed from Small Orders to Start Order 
+		// $("#Big-Order-Section").delay(100).fadeOut();
+		// $("#Big-Order-Section").find('input[type=number]').val('');
 	});
 	
 	$( "#big-orders-outlined" ).on( "click", function( event ) {
