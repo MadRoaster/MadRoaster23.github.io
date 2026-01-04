@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-	<script src="assets/js/color-modes.js"></script>
+	<!-- <script src="assets/js/color-modes.js"></script> -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,7 +14,8 @@
     <div class="py-2 text-center">
       <img class="d-block mx-auto mb-4" src="var/brand/Mad Roaster Logo.jpg" alt="" width="20%" height="20%">
       <h2>Mad Roaster Form</h2>
-      <p class="lead">Managers! Order your inventory for the next day on this application</p>
+	  <!-- Modified by KL 20251227 -->
+      <p class="lead">Managers! Order your inventory on this application</p>
     </div>
 	<hr class="my-4">
     <div class="row g-5">
@@ -23,11 +24,17 @@
           <div id="Unique-Identifier-Section">
 						<input type="hidden" name="entry.150139499" id="entry.150139499">
 					</div>
+					<!-- Modified by KL 20251227 -->
+					 <div id="Order-Date-Section">
+						<input type="hidden" name="entry.1401722349" id="entry.1401722349">
+					</div>
 					
 					<div class="row g-3">
 			<div class="col-sm-12" style="text-align:center;">
 				<h4 id="Tomorrows-Date"></h4>
 				</br>
+				<!-- Modified by KL 20251227 - Update Date for Copyright ID -->
+				<h5 id="Next-Date-Warning"></h5>
 				<!-- Updated by KL on 20231212 - Changed from Daily Small Orders to Start Order -->
 			  <input type="radio" class="btn-check" name="options-outlined" id="start-order-outlined" autocomplete="off">
 			  <label class="btn btn-outline-dark" for="start-order-outlined" id="start-order-outlined-label">Start Order</label>
@@ -42,9 +49,16 @@
 			  <select class="form-select outlet-select" aria-label="Default select example" name="entry.226259794" id="entry.226259794" required>
 				  <option selected value="" disabled>Select Outlet</option>
 				  <option value="Amoy">Amoy</option>
-				  <option value="RWS">RWS</option>
-					<!-- Updated by KL on 20231212 - Added Courtyard Option -->
+				  <!-- Added by KL 20251227 - Update Date for Copyright ID -->
 				  <option value="Courtyard">Courtyard</option>
+				  <option value="Depot">Depot</option>
+				  <!-- Commented by KL 20251227 - Update Date for Copyright ID -->
+				  <!-- <option value="RWS">RWS</option> -->
+					<!-- Updated by KL on 20231212 - Added Courtyard Option -->
+				  <!-- Added by KL 20251227 - Update Date for Copyright ID -->
+				  <option value="HTX">HTX</option>
+				  <option value="NHCS">NHCS</option>
+				  <option value="NTU">NTU</option>
 				</select>
 			</div>
 			<div class="col-sm-12" id="Whole-Form" style="display:none">
@@ -95,8 +109,8 @@
 							  
 							  </br>
 							  
-							  <label for="entry.638960045" class="form-label">Cookies</label>
-							  <input type="number" pattern="\d*" class="form-control" name="entry.638960045" id="entry.638960045" placeholder="" value="" required="" min="0">
+							  <label for="entry.195263013" class="form-label">Cookies</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.195263013" id="entry.195263013" placeholder="" value="" required="" min="0">
 							  <div class="invalid-feedback">
 								Valid value is required.
 							  </div>
@@ -108,13 +122,423 @@
 							  <div class="invalid-feedback">
 								Valid value is required.
 							  </div>
+
+							  <!-- Modified by KL 20251227 - Update new item --> 
+							  </br>
+							  <label for="entry.1992307831" class="form-label">Scones</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.1992307831" id="entry.1992307831" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <!-- Modified by KL 20251227 - Update new item --> 
+							  <label for="entry.816616430" class="form-label">Cereal (Packet)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.816616430" id="entry.816616430" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
 							  
 							</div>
 						</div>
 					</div>
 				  </div>
-					
-					<div class="accordion-item">
+
+				  <!-- Modified by KL 20251227 - Added Items -->
+				  <div class="accordion-item">
+					<h2 class="accordion-header">
+					  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+						<div class="accordion-custom-div"><b>Sandwiches</b></div>
+					  </button>
+					</h2>
+					<div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					  <div class="accordion-body">
+							  <label for="entry.507121160" class="form-label">OG (Loaf)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.507121160" id="entry.507121160" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.473704296" class="form-label">Kimchi (Loaf)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.473704296" id="entry.473704296" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+					  </div>
+					</div>
+				  </div>
+
+				  <!-- Modified by KL 20251227 - Added Items -->
+				  <div class="accordion-item">
+					<h2 class="accordion-header">
+					  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+						<div class="accordion-custom-div"><b>Chiller Stock</b></div>
+					  </button>
+					</h2>
+					<div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					  <div class="accordion-body">
+							  <label for="entry.930261303" class="form-label">Chocolate Sauce (Packet)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.930261303" id="entry.930261303" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.1150598028" class="form-label">Honey Butter (Packet)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.1150598028" id="entry.1150598028" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.1824344904" class="form-label">Macerated Strawberry (Packet)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.1824344904" id="entry.1824344904" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  <!-- ONLY FOR NTU -->
+							  <div class="NTU-ONLY-DIV" style="display:none">
+								</br>
+								<label for="entry.160135225" class="form-label">Macadamia Praline (Packet)</label>
+								<input type="number" pattern="\d*" class="form-control" name="entry.160135225" id="entry.160135225" placeholder="" value="" required="" min="0">
+								<div class="invalid-feedback">
+									Valid value is required.
+								</div>
+							  </div>
+
+							  </br>
+
+							  <label for="entry.1402301264" class="form-label">Cold Brew (Bottle)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.1402301264" id="entry.1402301264" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.1866175604" class="form-label">Butter 250g (Pieces)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.1866175604" id="entry.1866175604" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  <div class="NHCS-ONLY-DIV Courtyard-ONLY-DIV" style="display:none">
+								</br>
+								<label for="entry.1071403740" class="form-label">Butter KG</label>
+								<input type="number" pattern="\d*" class="form-control" name="entry.1071403740" id="entry.1071403740" placeholder="" value="" required="" min="0">
+								<div class="invalid-feedback">
+									Valid value is required.
+								</div>
+							  </div>
+
+							  </br>
+
+							  <label for="entry.73087793" class="form-label">Custard (Tub)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.73087793" id="entry.73087793" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.863408689" class="form-label">Mascarpone (Tub)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.863408689" id="entry.863408689" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.1340232576" class="form-label">Lemon Curd (Tub)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.1340232576" id="entry.1340232576" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.1665091461" class="form-label">Matcha Powder</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.1665091461" id="entry.1665091461" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  <div class="Depot-ONLY-DIV HTX-ONLY-DIV NHCS-ONLY-DIV NTU-ONLY-DIV" style="display:none">
+								</br>
+								<label for="entry.2107447273" class="form-label">Avocado</label>
+								<input type="number" pattern="\d*" class="form-control" name="entry.2107447273" id="entry.2107447273" placeholder="" value="" required="" min="0">
+								<div class="invalid-feedback">
+									Valid value is required.
+								</div>
+							  </div>
+
+							  <div class="HTX-ONLY-DIV NHCS-ONLY-DIV NTU-ONLY-DIV" style="display:none">
+								</br>
+								<label for="entry.1803673698" class="form-label">Calamansi</label>
+								<input type="number" pattern="\d*" class="form-control" name="entry.1803673698" id="entry.1803673698" placeholder="" value="" required="" min="0">
+								<div class="invalid-feedback">
+									Valid value is required.
+								</div>
+							  </div>
+
+							  <div class="HTX-ONLY-DIV NHCS-ONLY-DIV NTU-ONLY-DIV" style="display:none">
+								</br>
+								<label for="entry.1676772614" class="form-label">Coriander</label>
+								<input type="number" pattern="\d*" class="form-control" name="entry.1676772614" id="entry.1676772614" placeholder="" value="" required="" min="0">
+								<div class="invalid-feedback">
+									Valid value is required.
+								</div>
+							  </div>
+					  </div>
+					</div>
+				  </div>
+
+				  <!-- Modified by KL 20251227 - Added Items -->
+				  <!-- NHCS / CY / DEPOT / NTU ONLY -->
+				  <div class="accordion-item NHCS-ONLY Courtyard-ONLY Depot-ONLY NTU-ONLY" style="display:none">
+					<h2 class="accordion-header">
+					  <button id="flush-collapseTenFreezer" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+						<div class="accordion-custom-div"><b>Freezer Stock</b></div>
+					  </button>
+					</h2>
+					<div id="flush-collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					  <div class="accordion-body">
+							  <label for="entry.2043223137" class="form-label">Scones (Box)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.2043223137" id="entry.2043223137" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.600928113" class="form-label">Cookie Nutella</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.600928113" id="entry.600928113" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.1527436877" class="form-label">Cookie Matcha</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.1527436877" id="entry.1527436877" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.278558762" class="form-label">Strawberry Jam (Packet)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.278558762" id="entry.278558762" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+					  </div>
+					</div>
+				  </div>
+
+				  <!-- Modified by KL 20251227 - Added Items -->
+				  <div class="accordion-item">
+					<h2 class="accordion-header">
+					  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+						<div class="accordion-custom-div"><b>Dry Stock</b></div>
+					  </button>
+					</h2>
+					<div id="flush-collapseEleven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					  <div class="accordion-body">
+							  <label for="entry.1286624385" class="form-label">Coffee Beans (Packet)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.1286624385" id="entry.1286624385" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.2803279" class="form-label">Traditional Beans (Packet)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.2803279" id="entry.2803279" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.550928553" class="form-label">Kaya</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.550928553" id="entry.550928553" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  <div class="Amoy-ONLY-DIV" style="display:none"> 
+							    </br>
+								<label for="entry.266518919" class="form-label">Chips</label>
+								<input type="number" pattern="\d*" class="form-control" name="entry.266518919" id="entry.266518919" placeholder="" value="" required="" min="0">
+								<div class="invalid-feedback">
+									Valid value is required.
+								</div>
+							  </div>
+
+							  </br>
+
+							  <label for="entry.477491214" class="form-label">Tea Powder (Packet)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.477491214" id="entry.477491214" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.2041607899" class="form-label">White Sugar (KG)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.2041607899" id="entry.2041607899" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.970092359" class="form-label">Brown Sugar (KG)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.970092359" id="entry.970092359" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.363127789" class="form-label">Sugar Sachet (Packet)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.363127789" id="entry.363127789" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.491909824" class="form-label">Chocolate Crumble (Packet)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.491909824" id="entry.491909824" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.2098837921" class="form-label">CB Bottles (Pieces)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.2098837921" id="entry.2098837921" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.1036625320" class="form-label">CB Cap (Packet)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.1036625320" id="entry.1036625320" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.445365894" class="form-label">6oz Cup (Packet)</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.445365894" id="entry.445365894" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  <div class="Amoy-ONLY-DIV NHCS-ONLY-DIV" style="display:none">
+								</br>
+								<label for="entry.477258574" class="form-label">Oatmilk</label>
+								<input type="number" pattern="\d*" class="form-control" name="entry.477258574" id="entry.477258574" placeholder="" value="" required="" min="0">
+								<div class="invalid-feedback">
+									Valid value is required.
+								</div>
+							  </div>
+
+							  <div class="Courtyard-ONLY-DIV" style="display:none">
+								</br>
+								<label for="entry.5998588" class="form-label">Granola</label>
+								<input type="number" pattern="\d*" class="form-control" name="entry.5998588" id="entry.5998588" placeholder="" value="" required="" min="0">
+								<div class="invalid-feedback">
+									Valid value is required.
+								</div>
+							  </div>
+
+							  <div class="Courtyard-ONLY-DIV" style="display:none">
+								</br>
+								<label for="entry.1673148035" class="form-label">Laoganma Cashew Nut</label>
+								<input type="number" pattern="\d*" class="form-control" name="entry.1673148035" id="entry.1673148035" placeholder="" value="" required="" min="0">
+								<div class="invalid-feedback">
+									Valid value is required.
+								</div>
+							  </div>
+
+							  <div class="Amoy-ONLY-DIV" style="display:none">
+								</br>
+								<label for="entry.659400570" class="form-label">4 Cup Cardboard Holder</label>
+								<input type="number" pattern="\d*" class="form-control" name="entry.659400570" id="entry.659400570" placeholder="" value="" required="" min="0">
+								<div class="invalid-feedback">
+									Valid value is required.
+								</div>
+							  </div>
+					  </div>
+					</div>
+				  </div>
+
+				  <!-- Modified by KL 20251227 - Added Items -->
+				  <div class="accordion-item">
+					<h2 class="accordion-header">
+					  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+						<div class="accordion-custom-div"><b>Miscellaneous</b></div>
+					  </button>
+					</h2>
+					<div id="flush-collapseTwelve" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+					  <div class="accordion-body">
+							  <label for="entry.455498335" class="form-label">Front Stickers</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.455498335" id="entry.455498335" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.758429886" class="form-label">Back Stickers</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.758429886" id="entry.758429886" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.855446185" class="form-label">Full Loaf Packaging</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.855446185" id="entry.855446185" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  </br>
+
+							  <label for="entry.60365619" class="form-label">Half Loaf Packaging</label>
+							  <input type="number" pattern="\d*" class="form-control" name="entry.60365619" id="entry.60365619" placeholder="" value="" required="" min="0">
+							  <div class="invalid-feedback">
+								Valid value is required.
+							  </div>
+
+							  <div class="Amoy-ONLY-DIV HTX-ONLY-DIV NHCS-ONLY-DIV NTU-ONLY-DIV" style="display:none">
+								</br>
+								<label for="entry.591157038" class="form-label">Printer Roll</label>
+								<input type="number" pattern="\d*" class="form-control" name="entry.591157038" id="entry.591157038" placeholder="" value="" required="" min="0">
+								<div class="invalid-feedback">
+									Valid value is required.
+								</div>
+							  </div>
+					  </div>
+					</div>
+				  </div>
+				  
+				  <!-- Commented by KL 20251227 - Removed Items -->
+				  <!-- 
+				  <div class="accordion-item">
 					<h2 class="accordion-header">
 					  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
 						<div class="accordion-custom-div"><b>Food</b></div>
@@ -129,9 +553,12 @@
 							  </div>
 					  </div>
 					</div>
-				  </div>
+				  </div> 
+				  -->
 					
 					<!-- Updated by KL on 20231212 - Moved Coffee & Tea, Cups & ETC Section up -->
+					<!-- Commented by KL 20251227 - Removed Items -->
+					<!--
 					<div class="accordion-item">
 					<h2 class="accordion-header">
 					  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
@@ -261,7 +688,10 @@
 					  </div>
 					</div>
 				  </div>
+				  -->
 					
+				  <!-- Commented by KL 20251227 - Removed Items -->
+				   <!--
 					<div class="accordion-item">
 					<h2 class="accordion-header">
 					  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
@@ -270,6 +700,7 @@
 					</h2>
 					<div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
 					  <div class="accordion-body">
+					-->
 								<!-- Modified by KL 20231212 - Hide Eggs -->
 								<!--
 							  <label for="entry.600314914" class="form-label">Eggs</label>
@@ -282,6 +713,8 @@
 								-->
 								
 								<!-- Updated by KL on 20231212 - Changed from OG Toast to OG (Tub) & Moved OG (Tub) & Kaya (Tub) to ETC Section -->
+								<!-- Commented by KL 20251227 - Removed Items -->
+								 <!--
 								<label for="entry.431918463" class="form-label">OG (Tub)</label>
 							  <input type="number" pattern="\d*" class="form-control" name="entry.431918463" id="entry.431918463" placeholder="" value="" required="" min="0">
 							  <div class="invalid-feedback">
@@ -303,6 +736,7 @@
 							  </div>
 							  
 							  </br>
+							  -->
 							  
 								<!-- Modified by KL on 20231212 - Hide Brown Sugar -->
 								<!--
@@ -315,6 +749,8 @@
 							  </br>
 								-->
 							  
+							  <!-- Commented by KL 20251227 - Removed Items -->
+							  <!--
 							  <label for="entry.1036280429" class="form-label">Salted Butter</label>
 							  <input type="number" pattern="\d*" class="form-control" name="entry.1036280429" id="entry.1036280429" placeholder="" value="" required="" min="0">
 							  <div class="invalid-feedback">
@@ -322,6 +758,7 @@
 							  </div>
 							  
 							  </br>
+							  -->
 							  
 							  <!-- Modified by KL 20231212 - Hide Choco Powder, Honey -->
 							  <!--
@@ -341,7 +778,8 @@
 							  
 							  </br>
 								-->
-							  
+							  <!-- Commented by KL 20251227 - Removed Items -->
+							  <!--
 							  <label for="entry.565151834" class="form-label">Matcha</label>
 							  <input type="number" pattern="\d*" class="form-control" name="entry.565151834" id="entry.565151834" placeholder="" value="" required="" min="0">
 							  <div class="invalid-feedback">
@@ -349,6 +787,7 @@
 							  </div>
 							  
 							  </br>
+							  -->
 							  
 								<!-- Modified by KL 20231212 - Hide Creamer, 4 Cup Cardboard Holder, White Sugar -->
 								<!--
@@ -377,6 +816,8 @@
 							  </br>
 								-->
 								
+							  <!-- Commented by KL 20251227 - Removed Items -->
+							  <!--
 							  <label for="entry.735125027" class="form-label">Crumble</label>
 							  <input type="number" pattern="\d*" class="form-control" name="entry.735125027" id="entry.735125027" placeholder="" value="" required="" min="0">
 							  <div class="invalid-feedback">
@@ -392,6 +833,8 @@
 							  </div>
 							  
 							  </br>
+
+							  -->
 							  <!-- Modified by KL on 20231212 - Hide Chips (Bag),Butter Slabs, Brown Box -->
 								<!--
 							  <label for="entry.1630769547" class="form-label">Chips (Bag)</label>
@@ -430,7 +873,8 @@
 								
 								</br>
 								-->
-								
+								<!-- Commented by KL 20251227 - Removed Items -->
+								<!--
 								<label for="entry.1017042490" class="form-label">Caffetto</label>
 							  <input type="number" pattern="\d*" class="form-control" name="entry.1017042490" id="entry.1017042490" placeholder="" value="" required="" min="0">
 							  <div class="invalid-feedback">
@@ -446,6 +890,7 @@
 							  </div>
 								
 								</br>
+								-->
 								
 								<!-- Modified by KL on 20231212 - Hide Scotch Tape, White Tape-->
 								<!--
@@ -465,15 +910,18 @@
 								
 								</br>
 								-->
-								
+								<!-- Commented by KL 20251227 - Removed Items -->
+								<!--
 								<label for="entry.219715911" class="form-label">CB Bottle Caps</label>
 							  <input type="number" pattern="\d*" class="form-control" name="entry.219715911" id="entry.219715911" placeholder="" value="" required="" min="0">
 							  <div class="invalid-feedback">
 								Valid value is required.
 							  </div>
+							  -->
 								
 								<!-- Updated by KL on 20231212 - Added Condensed Milk (Carton) & Evaporated Milk (Carton) -->
-								
+								<!-- Commented by KL 20251227 - Removed Items -->
+								<!--
 								</br>
 								
 								<label for="entry.1408924176" class="form-label">Condensed Milk (Carton)</label>
@@ -493,9 +941,13 @@
 					  </div>
 					</div>
 				  </div>
-					
+				  -->
+				  
+					<!-- Commented by KL 20251227 - Removed Items -->
+					<!--
 					<div id="Big-Order-Section" style="display:none">
 					<hr class="my-4">
+					-->
 					
 						<!-- Updated by KL on 20231212 - Commented Big Order -->
 						<!-- 
@@ -505,6 +957,8 @@
 					-->
 					
 					<!-- Updated by KL on 20231212 - Moved Amoy & RWS Section down -->
+					<!-- Commented by KL 20251227 - Removed Items -->
+					<!--
 					<div class="accordion-item" id="Amoy_Accordion">
 					<h2 class="accordion-header">
 					  <button id="flush-collapseSixAmoy" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
@@ -523,20 +977,28 @@
 					  </div>
 					</div>
 				  </div>
+				  -->
 					
 					<!-- Updated by KL on 20231212 - Added border to ensure top has border after one of the Accordion is hidden -->
+					<!-- Commented by KL 20251227 - Removed Items -->
+					<!--
 					<div class="accordion-item" id="RWS_Accordion" style="border: var(--bs-accordion-border-width) solid var(--bs-accordion-border-color);">
 					<h2 class="accordion-header">
 					  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+						-->
 						<!-- Updated by KL on 20231212 - Added Courtyard with RWS -->
+						<!-- Commented by KL 20251227 - Removed Items -->
+						<!--
 						<div class="accordion-custom-div"><b>RWS / Courtyard Only</b>&nbsp(Optional)</div></b>
 					  </button>
 					</h2>
 					<div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
 					  <div class="accordion-body">
+						-->
 								
 								<!-- Updated by KL on 20231212 - Added Chocolate Sauce & Honey Butter Sauce -->
-								
+								<!-- Commented by KL 20251227 - Removed Items -->
+								<!--
 								<label for="entry.1508921218" class="form-label">Chocolate Sauce</label>
 							  <input type="number" pattern="\d*" class="form-control" name="entry.1508921218" id="entry.1508921218" placeholder="" value="" required="" min="0">
 							  <div class="invalid-feedback">
@@ -558,8 +1020,11 @@
 							  <div class="invalid-feedback">
 								Valid value is required.
 							  </div>
+							  -->
 								
 								<!-- Updated by KL on 20231212 - Moved Toasted Cereal from ETC to RWS Only. Will Only be available for RWS -->
+								<!-- Commented by KL 20251227 - Removed Items -->
+								<!--
 								</br>
 								
 								<label for="entry.525879931" class="form-label">Toasted Cereal</label>
@@ -575,6 +1040,7 @@
 				  </div>
 				  
 					</div>
+					-->
 					
 					<hr class="my-4">
 					
@@ -611,7 +1077,8 @@
   </main>
 
   <footer class="my-5 pt-5 text-body-secondary text-center text-small">
-    <p class="mb-1">© 2022–2023 Mad Roaster</p>
+	<!-- Modified by KL 20251227 - Update Date for Copyright ID -->
+    <p class="mb-1" style="display:inline-block">© 2022–<div id="copyright_date_id" style="display:inline-block"></div> Mad Roaster</p>
     <ul class="list-inline">
       <li class="list-inline-item"><a href="#">Privacy</a></li>
       <li class="list-inline-item"><a href="#">Terms</a></li>
